@@ -12,10 +12,9 @@ imagesc(ORG); colormap(gray); colorbar;
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai4/kadai4_1.jpg)  
 図1 原画像(グレースケール)
 
-まず，閾値に輝度値64を設定するために，IMG = ORG > 64;とする．これにより，IMGにはORGの輝度値64以上の画素を白(1)，64未満の画素を黒(0)に変換した画像が格納されている．
-
-輝度値を64とした結果を図2に示す．
+図1のヒストグラムを図2に示す．
 
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai4/kadai4_2.jpg)  
-図2 輝度値64
+図2 ヒストグラム
 
+図2を見ると，0～50の範囲に1つ山があり，そこより後ろの範囲にもう1つ山があることがわかる．おそらく0～50の範囲の山は図1の右側にある黒い部分であり，もう1つの山は猫の顔や体の白い部分であると考えられる．
