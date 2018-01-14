@@ -2,9 +2,9 @@
 
 「ぱくたそ」から持ってきた画像を原画像とする．この画像は縦1066画素，横1600画素によるディジタルカラー画像である．
 
-ORG=imread('Cat.jpg'); % 原画像の入力
-ORG = rgb2gray(ORG); colormap(gray); colorbar;
-imagesc(ORG); axis image; % 画像の表示
+ORG=imread('Cat.jpg'); % 原画像の入力  
+ORG = rgb2gray(ORG); colormap(gray); colorbar;  
+imagesc(ORG); axis image; % 画像の表示  
 
 によって，原画像を読み込み，グレースケールで表示した結果を図１に示す．
 
