@@ -1,5 +1,5 @@
 
-# 課題7レポート
+# 課題8レポート
 
 「ぱくたそ」から持ってきた画像を原画像とする．この画像は縦1066画素，横1600画素によるディジタルカラー画像である．
 
@@ -15,12 +15,15 @@ imagesc(ORG); colormap(gray); colorbar; % 画像の表示
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai8/kadai8_1.jpg)  
 図2 原画像(グレースケール)
 
-を図3に示す．
+図2を閾値128で2値化したものを図3に示す．
 
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai8/kadai8_2.jpg)  
-図3 
+図3 2値化画像
 
-次に，を図4に示す．
+次に，図2をラベリングしたものを図4に示す．
 
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai8/kadai8_3.jpg)  
-図4 
+図4 ラベリング画像
+
+ラベリングとは，同じ連結成分に属する画素に同一番号を，異なる連結成分に異なる番号を与える処理の事である．
+
