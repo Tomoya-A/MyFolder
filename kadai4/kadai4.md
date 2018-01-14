@@ -16,6 +16,6 @@ imagesc(ORG); colormap(gray); colorbar;
 
 輝度値を64とした結果を図2に示す．
 
-![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai3/kadai3_2.jpg)  
+![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai4/kadai4_2.jpg)  
 図2 輝度値64
 
