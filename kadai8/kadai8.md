@@ -1,11 +1,11 @@
 # 課題8レポート
 
-「ぱくたそ」から持ってきた画像を原画像とする．この画像は縦1066画素，横1600画素によるディジタルカラー画像である．
+「ぱくたそ」から持ってきた画像を原画像とする．この画像は縦900画素，横1600画素によるディジタルカラー画像である．
 
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai8/Cat3.jpg)  
 図1 原画像
 
-ORG = imread('Cat.jpg'); % 画像の読み込み  
+ORG = imread('Cat3.jpg'); % 画像の読み込み  
 ORG = rgb2gray(ORG); % 白黒濃淡画像に変換  
 imagesc(ORG); colormap(gray); colorbar; % 画像の表示   
 
