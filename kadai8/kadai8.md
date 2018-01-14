@@ -2,7 +2,7 @@
 
 「ぱくたそ」から持ってきた画像を原画像とする．この画像は縦1066画素，横1600画素によるディジタルカラー画像である．
 
-![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai8/Cat.jpg)  
+![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai8/Cat3.jpg)  
 図1 原画像
 
 ORG = imread('Cat.jpg'); % 画像の読み込み  
