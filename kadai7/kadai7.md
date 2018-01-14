@@ -29,3 +29,5 @@ imagesc(ORG); colormap(gray); colorbar; % 画像の表示
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai7/kadai7_4.jpg)  
 図5 図4のヒストグラム
 
+図3と図5を比較すると，ダイナミックレンジを拡大することで濃度値の範囲が最小最大方向に広がっていることがわかる．
+また，ORG = uint8(ORG);により，倍精度のdouble型から符号なし整数のint型に変換されている．これにより，精度が高い型から低い型に変換することで丸められるため，図5のヒストグラムでは，等間隔ごとに濃度値がないところが出来ている．
