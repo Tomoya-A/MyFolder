@@ -10,12 +10,12 @@ ORG=imread('Cat.jpg'); % 原画像の入力
 ORG = rgb2gray(ORG); % カラー画像を白黒濃淡画像へ変換  
 imagesc(ORG); colormap(gray); colorbar;  
 
-によって，原画像を読み込み，グレースケールで表示した結果を図１に示す．
+によって，原画像を読み込み，グレースケールで表示した結果を図2に示す．
 
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai5/kadai5_1.jpg)  
 図2 原画像(グレースケール)
 
-判別分析法を用いて2値化した画像を図2に示す．
+判別分析法を用いて2値化した画像を図3に示す．
 
 ![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai5/kadai5_2.jpg)  
 図3 2値化画像
