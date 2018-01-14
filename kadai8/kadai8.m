@@ -1,7 +1,7 @@
 % 課題８ ラベリング
 % 二値化された画像の連結成分にラベルをつけよ．
 
-ORG = imread('Cat.jpg'); % 画像の読み込み
+ORG = imread('Cat3.jpg'); % 画像の読み込み
 ORG = rgb2gray(ORG); % 白黒濃淡画像に変換
 imagesc(ORG); colormap(gray); colorbar; % 画像の表示
 pause;
