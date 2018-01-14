@@ -1,49 +1,38 @@
-# 課題１レポート
+# 課題2レポート
 
 「ぱくたそ」から持ってきた画像を原画像とする．この画像は縦1066画素，横1600画素によるディジタルカラー画像である．
 
-ORG=imread('kadai1.jpg'); % 原画像の入力  
+ORG=imread('Cat.jpg'); % 原画像の入力
+ORG = rgb2gray(ORG); colormap(gray); colorbar;
 imagesc(ORG); axis image; % 画像の表示
 
-によって，原画像を読み込み，表示した結果を図１に示す．
+によって，原画像を読み込み，グレースケールで表示した結果を図１に示す．
 
-![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai1/kadai1_1.jpg)  
-図1 原画像
+![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai2/kadai2_1.jpg)  
+図1 原画像(グレースケール)
 
-原画像を1/2サンプリングするには，画像を1/2倍に縮小した後，2倍に拡大すればよい．なお，拡大する際には，単純補間するために「box」オプションを設定する．
+図1を2階調画像にするには，まず黒(0)と白(1)を区別する閾値が必要となる．閾値は256/階調数で求めることができるので，2階調であれば256/2=128となる．したがって，IMG = ORG>128;において128より大きいものは白(1)，128未満のものは黒(0)となり，2階調画像が実現できる．
 
-IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
+図1を2階調画像とした結果を図2に示す．
 
-1/2サンプリングの結果を図２に示す．
+![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai2/kadai2_2.jpg)  
+図2 2階調画像
 
-![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai1/kadai1_2.jpg)  
-図2 1/2サンプリング
+同様に，4階調画像も考える．まず256を等間隔にするために閾値が3つ必要となるので，256/4=64と，その2倍3倍した128，192を閾値とする．
+IMG0 = ORG>64;
+IMG1 = ORG>128;
+IMG2 = ORG>192;
+IMG = IMG0 + IMG1 + IMG2;
+上記のプログラムのIMG0，IMG1，IMG2には各閾値での2階調画像が格納されており，それらの和で4階調画像が実現される．
 
-同様に原画像を1/4サンプリングするには，画像を1/2倍に縮小した後，2倍に拡大すればよい．すなわち，
+図1を4階調画像とした結果を図3に示す．
 
-IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
+![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai2/kadai2_3.jpg)  
+図3 4階調画像
 
-とする．1/4サンプリングの結果を図３に示す．
+同様にして8階調画像とした結果を図4に示す．
 
-![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai1/kadai1_3.jpg)  
-図3 1/4サンプリング
-
-1/8から1/32サンプリングは，
-
-IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
-
-を繰り返す．サンプリングの結果を図４～６に示す．
-
-![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai1/kadai1_4.jpg)  
-図4 1/8サンプリング
-
-![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai1/kadai1_5.jpg)  
-図5 1/16サンプリング
-
-![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai1/kadai1_6.jpg)  
-図6 1/32サンプリング
+![原画像](https://github.com/Tomoya-A/MyFolder/blob/master/kadai2/kadai2_4.jpg)  
+図4 8階調画像
 
 このようにサンプリング幅が大きくなると，モザイク状のサンプリング歪みが発生する．
